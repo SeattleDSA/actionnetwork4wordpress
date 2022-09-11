@@ -260,7 +260,7 @@ function actionnetwork_calendar_shortcode ( $atts, $content = null ) {
 	// $page = isset($atts['page']) ? (int) $atts['page'] : 10;
 	$date_format = isset($atts['date_format']) ? sanitize_text_field($atts['date_format']) : 'M d D H:i a';
 	$link_format = isset($atts['link_format']) ? sanitize_text_field($atts['link_format']) : '{{ event.link }}';
-	$link_text = isset($atts['link_text']) ? $atts['link_text'] : '<div class="actionnetwork-calendar-date">{{ event.date }}</div><div class="actionnetwork-calendar-title">{{ event.title }}</div>'; // Output of Calendar
+	$link_text = isset($atts['link_text']) ? $atts['link_text'] : '<div class="actionnetwork-calendar-date">{{ event.date }}</div><div class="actionnetwork-calendar-title">{{ event.title }}</div>'; // Default Output
 	$container_element = isset($atts['container_element']) ? sanitize_key($atts['container_element']) : 'div';
 	$container_class = isset($atts['container_class']) ? sanitize_html_class($atts['container_class']) : 'actionnetwork-calendar';
 	$item_element = isset($atts['item_element']) ? sanitize_key($atts['item_element']) : 'div';
