@@ -16,7 +16,7 @@ Find this plugin useful? Please consider [hiring the original developer or makin
 ## Updates
 
 _2022.09.11: Work commences on updating files_
-* Calendar Shortcode
+* 🗓️ Calendar Shortcode
  * Default php date format updated to M d D H:i a for example: "Sep 13 Tue 19:00 pm"
  * Added container div elements around Date and Title
 	<div class="actionnetwork-calendar-date">{{ event.date }}</div><div class="actionnetwork-calendar-title">{{ event.title }}</div>
