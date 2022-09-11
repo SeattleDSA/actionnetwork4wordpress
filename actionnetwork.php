@@ -1,16 +1,16 @@
 <?php
 /*
- * @package ActionNetwork
+ * @package ActionNetwork4Wordpress
  * @version 1.0
  *
- * Plugin Name: Action Network
+ * Plugin Name: Action Network 4 Wordpress
  * Description: Provides Action Network (actionnetwork.org) action embed codes as shortcodes and a calendar and signup widget
- * Author: Jonathan Kissam
- * Text Domain: actionnetwork
+ * Author: Seattle DSA (based on work by Jonathan Kissam)
+ * Text Domain: actionnetwork4wordpress
  * Domain Path: /languages
  * Version: 1.0
  * License: GPLv3
- * Author URI: http://jonathankissam.com
+ * Author URI: https://seattledsa.org
  */
 
 /**
@@ -258,12 +258,12 @@ function actionnetwork_calendar_shortcode ( $atts, $content = null ) {
 	
 	$n = isset($atts['n']) ? (int) $atts['n'] : 0;
 	// $page = isset($atts['page']) ? (int) $atts['page'] : 10;
-	$date_format = isset($atts['date_format']) ? sanitize_text_field($atts['date_format']) : 'F j, Y';
+	$date_format = isset($atts['date_format']) ? sanitize_text_field($atts['date_format']) : 'M d D H:i a';
 	$link_format = isset($atts['link_format']) ? sanitize_text_field($atts['link_format']) : '{{ event.link }}';
-	$link_text = isset($atts['link_text']) ? $atts['link_text'] : '{{ event.date }}: {{ event.title }}';
-	$container_element = isset($atts['container_element']) ? sanitize_key($atts['container_element']) : 'ul';
+	$link_text = isset($atts['link_text']) ? $atts['link_text'] : '<div class="actionnetwork-calendar-date">{{ event.date }}</div><div class="actionnetwork-calendar-title">{{ event.title }}</div>'; // Output of Calendar
+	$container_element = isset($atts['container_element']) ? sanitize_key($atts['container_element']) : 'div';
 	$container_class = isset($atts['container_class']) ? sanitize_html_class($atts['container_class']) : 'actionnetwork-calendar';
-	$item_element = isset($atts['item_element']) ? sanitize_key($atts['item_element']) : 'li';
+	$item_element = isset($atts['item_element']) ? sanitize_key($atts['item_element']) : 'div';
 	$item_class = isset($atts['item_class']) ? sanitize_html_class($atts['item_class']) : 'actionnetwork-calendar-item';
 	$no_events = isset($atts['no_events']) ? $atts['no_events'] : __( 'No upcoming events', 'actionnetwork' );
 	$location = (isset($atts['location']) && $atts['location']) ? '<div class="actionnetwork-calendar-location">{{ event.location }}</div>' : '';
