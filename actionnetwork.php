@@ -261,10 +261,11 @@ function actionnetwork_calendar_shortcode ( $atts, $content = null ) {
 	$date_format = isset($atts['date_format']) ? sanitize_text_field($atts['date_format']) : 'M d D H:i a';
 	$dateMonth_format = isset($atts['dateMonth_format']) ? sanitize_text_field($atts['dateMonth_format']) : 'M';
 	$dateNumber_format = isset($atts['dateNumber_format']) ? sanitize_text_field($atts['dateNumber_format']) : 'd';
-	$dateName_format = isset($atts['dateName_format']) ? sanitize_text_field($atts['dateName_format']) : 'D';
+	$dateName_format = isset($atts['dateName_format']) ? sanitize_text_field($atts['dateName_format']) : 'l';
 	$dateStartTime_format = isset($atts['dateStartTime_format']) ? sanitize_text_field($atts['dateStartTime_format']) : 'H:i a';
 	$link_format = isset($atts['link_format']) ? sanitize_text_field($atts['link_format']) : '{{ event.link }}';
-	$link_text = isset($atts['link_text']) ? $atts['link_text'] : '<div class="actionnetwork-calendar-date"><div class="actionnetwork-calendar-dateMonth">{{ event.dateMonth }}</div><div class="actionnetwork-calendar-dateNumber">{{ event.dateNumber }}</div><div class="actionnetwork-calendar-dateName">{{ event.dateName }}</div><div class="actionnetwork-calendar-dateStartTime">{{ event.dateStartTime }}</div></div><div class="actionnetwork-calendar-title">{{ event.title }}</div>'; // Default Output
+	$link_dateinfo = isset($atts['link_dateinfo']) ? $atts['link_dateinfo'] : '<div class="actionnetwork-calendar-dateNameMonth">{{ event.dateName }}</div><div class="actionnetwork-calendar-dateNumber">{{ event.dateNumber }}</div><div class="actionnetwork-calendar-dateStartTime">{{ event.dateStartTime }}</div>'; // Date Output
+	$link_text = isset($atts['link_text']) ? $atts['link_text'] : '{{ event.title }}'; // Event Name Output
 	$container_element = isset($atts['container_element']) ? sanitize_key($atts['container_element']) : 'div';
 	$container_class = isset($atts['container_class']) ? sanitize_html_class($atts['container_class']) : 'actionnetwork-calendar';
 	$item_element = isset($atts['item_element']) ? sanitize_key($atts['item_element']) : 'div';
@@ -309,9 +310,12 @@ function actionnetwork_calendar_shortcode ( $atts, $content = null ) {
 <$container_element class="$container_class">
 {% for event in events %}
   <$item_element class="$item_class">
-    <a href="$link_format">$link_text</a>
-  	$location
-  	$description
+    <div class="actionnetwork-calendar-date">$link_dateinfo</div>
+    <div class="actionnetwork-calendar-details">
+	    <a href="$link_format" class="actionnetwork-calendar-title">$link_text</a>
+	  	$location
+	  	$description
+	  </div>
   </$item_element>
 {% else %}
   <$item_element class="$item_class">$no_events</$item_element>
