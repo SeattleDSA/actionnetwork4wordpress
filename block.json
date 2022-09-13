@@ -1,0 +1,8 @@
+{
+    "apiVersion": 2,
+    "title": "Example: Basic (ESNext) - Action Network",
+    "name": "actionnetwork-calendar-esnext",
+    "category": "layout",
+    "icon": "universal-access-alt",
+    "editorScript": "file:./build/index.js"
+}
