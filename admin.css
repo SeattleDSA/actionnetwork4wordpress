@@ -80,6 +80,7 @@ button.copy.copied { background-color: #0073aa; }
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
+    padding: 1rem 0;
 }
 
 .actionnetwork-calendar-date {
@@ -92,6 +93,7 @@ button.copy.copied { background-color: #0073aa; }
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
+    margin:  auto;
 }
 
 .actionnetwork-calendar-details {
@@ -119,4 +121,16 @@ button.copy.copied { background-color: #0073aa; }
 
 .actionnetwork-calendar-dateStartTime {
     text-align: center;
+}
+
+.actionnetwork-calendar-title {
+    font-size: 1.25rem;
+}
+
+.actionnetwork-calendar-title {
+    font-size: 1rem;
+}
+
+.actionnetwork-calendar-location p, .actionnetwork-calendar-location {
+    font-size:  1rem;
 }
