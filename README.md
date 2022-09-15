@@ -4,7 +4,15 @@ Based on free Wordpress plugin for the [Action Network](https://actionnetwork.or
 
 __Please note that this version is an experimental fork__.
 
-Features:
+## Usage
+Add a Legacy Widget block with the Calendar view to add upcoming events.
+
+By default it will display
+Day of Week | Event Title
+Date Number | Event Venue (if available)
+Start Time  | Event Address (if available)
+
+## Features
 * Create a Wordpress shortcode from any Action Network embed code.
 * Manage your saved embed codes using the Wordpress backend. Supports sorting by title, type and last modified date, and provides a search function.
 * Use `[actionnetwork_calendar]` shortcode and Action Network Calendar widget to show a list of upcoming events. Optionally outputs upcoming events in JSON. The plugin on which this was based was supported by [The People's Lobby](http://www.thepeopleslobbyusa.org/) - if you like it, please consider [making a donation to them](https://actionnetwork.org/fundraising/donate-to-the-peoples-lobby).
